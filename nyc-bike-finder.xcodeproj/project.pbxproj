@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C681E5064963D21EFCC8947 /* libPods-nyc-bike-finder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 531B1B619B74F696818B3289 /* libPods-nyc-bike-finder.a */; };
 		6409BFB91BD6FA90007C819C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFB81BD6FA90007C819C /* main.m */; };
 		6409BFBC1BD6FA90007C819C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFBB1BD6FA90007C819C /* AppDelegate.m */; };
 		6409BFC21BD6FA90007C819C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6409BFC01BD6FA90007C819C /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		422E36BCE717C6E3F1BC218C /* Pods-nyc-bike-finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.debug.xcconfig"; sourceTree = "<group>"; };
+		531B1B619B74F696818B3289 /* libPods-nyc-bike-finder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyc-bike-finder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6409BFB41BD6FA90007C819C /* nyc-bike-finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nyc-bike-finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6409BFB81BD6FA90007C819C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6409BFBA1BD6FA90007C819C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		6409BFE11BD6FA90007C819C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6409BFEE1BD6FB16007C819C /* MAPBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPBase.h; sourceTree = "<group>"; };
 		6409BFEF1BD6FB16007C819C /* MAPBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPBase.m; sourceTree = "<group>"; };
+		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C681E5064963D21EFCC8947 /* libPods-nyc-bike-finder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		438640D9162968F50A6BDFE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				422E36BCE717C6E3F1BC218C /* Pods-nyc-bike-finder.debug.xcconfig */,
+				E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6409BFAB1BD6FA90007C819C = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +101,8 @@
 				6409BFD31BD6FA90007C819C /* nyc-bike-finderTests */,
 				6409BFDE1BD6FA90007C819C /* nyc-bike-finderUITests */,
 				6409BFB51BD6FA90007C819C /* Products */,
+				438640D9162968F50A6BDFE8 /* Pods */,
+				A1179502A82C60D88D607F2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +167,14 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
+		A1179502A82C60D88D607F2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				531B1B619B74F696818B3289 /* libPods-nyc-bike-finder.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6409BFE41BD6FA90007C819C /* Build configuration list for PBXNativeTarget "nyc-bike-finder" */;
 			buildPhases = (
+				01F04E4F8AA9599E8F604661 /* Check Pods Manifest.lock */,
 				6409BFB01BD6FA90007C819C /* Sources */,
 				6409BFB11BD6FA90007C819C /* Frameworks */,
 				6409BFB21BD6FA90007C819C /* Resources */,
+				12BD97A5FC4465A44EC6145C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,6 +301,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01F04E4F8AA9599E8F604661 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		12BD97A5FC4465A44EC6145C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6409BFB01BD6FA90007C819C /* Sources */ = {
@@ -421,6 +480,7 @@
 		};
 		6409BFE51BD6FA90007C819C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 422E36BCE717C6E3F1BC218C /* Pods-nyc-bike-finder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "nyc-bike-finder/Info.plist";
@@ -432,6 +492,7 @@
 		};
 		6409BFE61BD6FA90007C819C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "nyc-bike-finder/Info.plist";
@@ -508,6 +569,7 @@
 				6409BFE61BD6FA90007C819C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6409BFE71BD6FA90007C819C /* Build configuration list for PBXNativeTarget "nyc-bike-finderTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +578,7 @@
 				6409BFE91BD6FA90007C819C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6409BFEA1BD6FA90007C819C /* Build configuration list for PBXNativeTarget "nyc-bike-finderUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +587,7 @@
 				6409BFEC1BD6FA90007C819C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
