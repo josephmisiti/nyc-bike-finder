@@ -17,6 +17,7 @@
 		6409BFD51BD6FA90007C819C /* nyc_bike_finderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFD41BD6FA90007C819C /* nyc_bike_finderTests.m */; };
 		6409BFE01BD6FA90007C819C /* nyc_bike_finderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFDF1BD6FA90007C819C /* nyc_bike_finderUITests.m */; };
 		6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFEF1BD6FB16007C819C /* MAPBase.m */; settings = {ASSET_TAGS = (); }; };
+		6409BFF21BD7027A007C819C /* nyc.png in Resources */ = {isa = PBXBuildFile; fileRef = 6409BFF11BD7027A007C819C /* nyc.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		6409BFE11BD6FA90007C819C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6409BFEE1BD6FB16007C819C /* MAPBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPBase.h; sourceTree = "<group>"; };
 		6409BFEF1BD6FB16007C819C /* MAPBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPBase.m; sourceTree = "<group>"; };
+		6409BFF11BD7027A007C819C /* nyc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nyc.png; sourceTree = "<group>"; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 		6409BFB71BD6FA90007C819C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6409BFF11BD7027A007C819C /* nyc.png */,
 				6409BFB81BD6FA90007C819C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -280,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6409BFF21BD7027A007C819C /* nyc.png in Resources */,
 				6409BFCA1BD6FA90007C819C /* LaunchScreen.storyboard in Resources */,
 				6409BFC71BD6FA90007C819C /* Assets.xcassets in Resources */,
 				6409BFC21BD6FA90007C819C /* Main.storyboard in Resources */,

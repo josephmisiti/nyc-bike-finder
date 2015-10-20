@@ -10,4 +10,23 @@
 
 @implementation MAPBase
 
+@synthesize tableData = _tableData;
+@synthesize loading = _loading;
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+-(void)refresh:(id)sender {
+
+}
+
+-(void)reloadDataWithAnimation {
+
+}
+
 @end

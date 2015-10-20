@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MAPBase : UITableViewController
+@interface MAPBase : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+
+@property (nonatomic, strong) NSMutableArray* tableData;
+@property (nonatomic, getter=isLoading) BOOL loading;
+
+-(void)refresh:(id)sender;
+-(void)reloadDataWithAnimation;
 
 @end
