@@ -18,6 +18,8 @@
 		6409BFE01BD6FA90007C819C /* nyc_bike_finderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFDF1BD6FA90007C819C /* nyc_bike_finderUITests.m */; };
 		6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFEF1BD6FB16007C819C /* MAPBase.m */; settings = {ASSET_TAGS = (); }; };
 		6409BFF21BD7027A007C819C /* nyc.png in Resources */ = {isa = PBXBuildFile; fileRef = 6409BFF11BD7027A007C819C /* nyc.png */; settings = {ASSET_TAGS = (); }; };
+		6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF51BD703E9007C819C /* MAPConstants.m */; settings = {ASSET_TAGS = (); }; };
+		6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF91BD704D2007C819C /* MAPHTTPClient.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,11 @@
 		6409BFEE1BD6FB16007C819C /* MAPBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPBase.h; sourceTree = "<group>"; };
 		6409BFEF1BD6FB16007C819C /* MAPBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPBase.m; sourceTree = "<group>"; };
 		6409BFF11BD7027A007C819C /* nyc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nyc.png; sourceTree = "<group>"; };
+		6409BFF41BD703E9007C819C /* MAPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPConstants.h; sourceTree = "<group>"; };
+		6409BFF51BD703E9007C819C /* MAPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPConstants.m; sourceTree = "<group>"; };
+		6409BFF71BD704B7007C819C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		6409BFF81BD704D2007C819C /* MAPHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPHTTPClient.h; sourceTree = "<group>"; };
+		6409BFF91BD704D2007C819C /* MAPHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPHTTPClient.m; sourceTree = "<group>"; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +130,7 @@
 			children = (
 				6409BFED1BD6FAB7007C819C /* Application */,
 				6409BFB71BD6FA90007C819C /* Supporting Files */,
-				6409BFEE1BD6FB16007C819C /* MAPBase.h */,
-				6409BFEF1BD6FB16007C819C /* MAPBase.m */,
+				6409BFF31BD703C8007C819C /* Classes */,
 			);
 			path = "nyc-bike-finder";
 			sourceTree = "<group>";
@@ -166,8 +172,22 @@
 				6409BFC81BD6FA90007C819C /* LaunchScreen.storyboard */,
 				6409BFCB1BD6FA90007C819C /* Info.plist */,
 				6409BFC31BD6FA90007C819C /* nyc_bike_finder.xcdatamodeld */,
+				6409BFF71BD704B7007C819C /* PrefixHeader.pch */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		6409BFF31BD703C8007C819C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6409BFEE1BD6FB16007C819C /* MAPBase.h */,
+				6409BFEF1BD6FB16007C819C /* MAPBase.m */,
+				6409BFF41BD703E9007C819C /* MAPConstants.h */,
+				6409BFF51BD703E9007C819C /* MAPConstants.m */,
+				6409BFF81BD704D2007C819C /* MAPHTTPClient.h */,
+				6409BFF91BD704D2007C819C /* MAPHTTPClient.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		A1179502A82C60D88D607F2A /* Frameworks */ = {
@@ -345,7 +365,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6409BFBC1BD6FA90007C819C /* AppDelegate.m in Sources */,
+				6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */,
 				6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */,
+				6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */,
 				6409BFB91BD6FA90007C819C /* main.m in Sources */,
 				6409BFC51BD6FA90007C819C /* nyc_bike_finder.xcdatamodeld in Sources */,
 			);
@@ -428,6 +450,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "nyc-bike-finder/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -469,6 +492,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "nyc-bike-finder/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
