@@ -19,6 +19,8 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableData = [[NSMutableArray alloc] init];
 }
 
 -(void)refresh:(id)sender {
@@ -26,7 +28,9 @@
 }
 
 -(void)reloadDataWithAnimation {
-
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                  withRowAnimation:UITableViewRowAnimationFade];
 }
+
 
 @end

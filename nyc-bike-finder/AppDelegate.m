@@ -15,6 +15,15 @@
 
 @implementation AppDelegate
 
++ (AppDelegate *)sharedClient{
+    static AppDelegate *sharedClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedClient = [[self alloc] init];
+    });
+    return sharedClient;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     MAPStationList* stationList = [[MAPStationList alloc] init];
@@ -127,6 +136,10 @@
             abort();
         }
     }
+}
+
++ (CGRect)getScreenDims {
+    return [[UIScreen mainScreen] bounds];
 }
 
 @end

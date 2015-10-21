@@ -9,6 +9,7 @@
 #import "MAPStationList.h"
 #import "MAPHTTPClient.h"
 #import "Station.h"
+#import "StationCell.h"
 
 @interface MAPStationList ()
 
@@ -29,6 +30,23 @@
     [self refresh:nil];
 }
 
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    StationCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CELL"];
+    if (cell == nil) {
+        cell = [[StationCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:@"CELL"];
+    }
+    
+    Station* station = [self.tableData objectAtIndex:indexPath.row];
+    [cell setStation:station];
+    
+    return cell;
+}
+
 #pragma mark - inheritence
 
 -(void)refresh:(id)sender {
@@ -39,16 +57,30 @@
             Station *station = [Station fromJSON:stationDictionary];
             [self.tableData addObject:station];
             NSLog(@"%@", station);
-            
-            
-        }        //
-        
-        
-        
+        }
+        [self reloadDataWithAnimation];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error=%@", error);
     }];
 }
 
+#pragma mark - UITableViewController
+
+
+- (NSInteger)numberOfSectionsInTableView:
+(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.tableData count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return kCellHeight;
+}
 
 @end

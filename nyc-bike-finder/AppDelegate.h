@@ -19,6 +19,8 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
++ (AppDelegate *)sharedClient;
++ (CGRect)getScreenDims;
 
 
 @end

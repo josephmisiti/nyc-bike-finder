@@ -10,4 +10,4 @@
 
 NSString *const kCitiBikeStationURL = @"https://www.citibikenyc.com/stations/json";
 
-CGFloat const kCellHeight = 70.0f;
+CGFloat const kCellHeight = 100.0f;
