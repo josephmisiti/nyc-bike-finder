@@ -31,7 +31,6 @@
 - (void)uploadStations:(NSDictionary *)params
                success:(MAPHTTPClientSuccess)success
                failure:(MAPHTTPClientFailure)failure {
-
     
     [self GET:kCitiBikeStationURL parameters:params
         success:^(AFHTTPRequestOperation *operation, id responseObject){

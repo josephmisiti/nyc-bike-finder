@@ -20,6 +20,10 @@
 		6409BFF21BD7027A007C819C /* nyc.png in Resources */ = {isa = PBXBuildFile; fileRef = 6409BFF11BD7027A007C819C /* nyc.png */; settings = {ASSET_TAGS = (); }; };
 		6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF51BD703E9007C819C /* MAPConstants.m */; settings = {ASSET_TAGS = (); }; };
 		6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF91BD704D2007C819C /* MAPHTTPClient.m */; settings = {ASSET_TAGS = (); }; };
+		6409C0021BD706E2007C819C /* MAPStationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0011BD706E2007C819C /* MAPStationList.m */; settings = {ASSET_TAGS = (); }; };
+		6409C0081BD70804007C819C /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0071BD70804007C819C /* StationCell.m */; settings = {ASSET_TAGS = (); }; };
+		6409C00B1BD70820007C819C /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00A1BD70820007C819C /* Station.m */; settings = {ASSET_TAGS = (); }; };
+		6409C00F1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00E1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,14 @@
 		6409BFF71BD704B7007C819C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6409BFF81BD704D2007C819C /* MAPHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPHTTPClient.h; sourceTree = "<group>"; };
 		6409BFF91BD704D2007C819C /* MAPHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPHTTPClient.m; sourceTree = "<group>"; };
+		6409C0001BD706E2007C819C /* MAPStationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPStationList.h; sourceTree = "<group>"; };
+		6409C0011BD706E2007C819C /* MAPStationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPStationList.m; sourceTree = "<group>"; };
+		6409C0061BD70804007C819C /* StationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationCell.h; sourceTree = "<group>"; };
+		6409C0071BD70804007C819C /* StationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationCell.m; sourceTree = "<group>"; };
+		6409C0091BD70820007C819C /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		6409C00A1BD70820007C819C /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		6409C00D1BD70B93007C819C /* NSDictionary+nyc_bike_finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+nyc_bike_finder.h"; sourceTree = "<group>"; };
+		6409C00E1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+nyc_bike_finder.m"; sourceTree = "<group>"; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,14 +192,46 @@
 		6409BFF31BD703C8007C819C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6409BFEE1BD6FB16007C819C /* MAPBase.h */,
-				6409BFEF1BD6FB16007C819C /* MAPBase.m */,
+				6409BFFC1BD706B1007C819C /* UI */,
+				6409BFFB1BD706A0007C819C /* Utilities */,
+				6409C00C1BD70828007C819C /* Models */,
+				6409C00D1BD70B93007C819C /* NSDictionary+nyc_bike_finder.h */,
+				6409C00E1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		6409BFFB1BD706A0007C819C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
 				6409BFF41BD703E9007C819C /* MAPConstants.h */,
 				6409BFF51BD703E9007C819C /* MAPConstants.m */,
 				6409BFF81BD704D2007C819C /* MAPHTTPClient.h */,
 				6409BFF91BD704D2007C819C /* MAPHTTPClient.m */,
 			);
-			name = Classes;
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		6409BFFC1BD706B1007C819C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6409BFEE1BD6FB16007C819C /* MAPBase.h */,
+				6409BFEF1BD6FB16007C819C /* MAPBase.m */,
+				6409C0001BD706E2007C819C /* MAPStationList.h */,
+				6409C0011BD706E2007C819C /* MAPStationList.m */,
+				6409C0061BD70804007C819C /* StationCell.h */,
+				6409C0071BD70804007C819C /* StationCell.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		6409C00C1BD70828007C819C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6409C0091BD70820007C819C /* Station.h */,
+				6409C00A1BD70820007C819C /* Station.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		A1179502A82C60D88D607F2A /* Frameworks */ = {
@@ -364,12 +408,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6409C00F1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m in Sources */,
+				6409C0021BD706E2007C819C /* MAPStationList.m in Sources */,
 				6409BFBC1BD6FA90007C819C /* AppDelegate.m in Sources */,
+				6409C0081BD70804007C819C /* StationCell.m in Sources */,
 				6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */,
 				6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */,
 				6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */,
 				6409BFB91BD6FA90007C819C /* main.m in Sources */,
 				6409BFC51BD6FA90007C819C /* nyc_bike_finder.xcdatamodeld in Sources */,
+				6409C00B1BD70820007C819C /* Station.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

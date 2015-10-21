@@ -22,7 +22,7 @@
 }
 
 -(void)refresh:(id)sender {
-
+    // override in base class
 }
 
 -(void)reloadDataWithAnimation {
