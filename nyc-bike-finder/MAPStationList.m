@@ -11,6 +11,7 @@
 #import "StationCell.h"
 #import "MAPStationList.h"
 #import "MAPHTTPClient.h"
+#import "MAPWebViewController.h"
 
 @interface MAPStationList ()
 
@@ -19,6 +20,7 @@
 @implementation MAPStationList
 
 @synthesize webView = _webView;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +35,12 @@
     [self refresh:nil];
 }
 
+-(MAPWebViewController*)webView{
+    if(!_webView){
+        _webView = [[MAPWebViewController alloc] init];
+    }
+    return _webView;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -102,8 +110,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Station* station = [self.tableData objectAtIndex:indexPath.row];
-    //self.webView.webView loadURLString:kFacebookConnectURL];
-    //_webView.webView.delegate = (id)self;
+    [self.webView.webView loadURLString:station.googleMapsUrl];
+    self.webView.webView.delegate = (id)self;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_webView];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;

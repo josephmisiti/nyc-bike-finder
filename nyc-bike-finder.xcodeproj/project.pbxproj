@@ -24,6 +24,9 @@
 		6409C0081BD70804007C819C /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0071BD70804007C819C /* StationCell.m */; settings = {ASSET_TAGS = (); }; };
 		6409C00B1BD70820007C819C /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00A1BD70820007C819C /* Station.m */; settings = {ASSET_TAGS = (); }; };
 		6409C00F1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00E1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m */; settings = {ASSET_TAGS = (); }; };
+		6409C0151BD74056007C819C /* MAPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0141BD74056007C819C /* MAPWebViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6409C0181BD74523007C819C /* MAPMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0171BD74523007C819C /* MAPMathUtils.m */; settings = {ASSET_TAGS = (); }; };
+		6409C01A1BD7456C007C819C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6409C0191BD7456C007C819C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,11 @@
 		6409C00A1BD70820007C819C /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
 		6409C00D1BD70B93007C819C /* NSDictionary+nyc_bike_finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+nyc_bike_finder.h"; sourceTree = "<group>"; };
 		6409C00E1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+nyc_bike_finder.m"; sourceTree = "<group>"; };
+		6409C0131BD74056007C819C /* MAPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPWebViewController.h; sourceTree = "<group>"; };
+		6409C0141BD74056007C819C /* MAPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPWebViewController.m; sourceTree = "<group>"; };
+		6409C0161BD74523007C819C /* MAPMathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPMathUtils.h; sourceTree = "<group>"; };
+		6409C0171BD74523007C819C /* MAPMathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPMathUtils.m; sourceTree = "<group>"; };
+		6409C0191BD7456C007C819C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6409C01A1BD7456C007C819C /* CoreLocation.framework in Frameworks */,
 				4C681E5064963D21EFCC8947 /* libPods-nyc-bike-finder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +217,8 @@
 				6409BFF51BD703E9007C819C /* MAPConstants.m */,
 				6409BFF81BD704D2007C819C /* MAPHTTPClient.h */,
 				6409BFF91BD704D2007C819C /* MAPHTTPClient.m */,
+				6409C0161BD74523007C819C /* MAPMathUtils.h */,
+				6409C0171BD74523007C819C /* MAPMathUtils.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -221,6 +232,8 @@
 				6409C0011BD706E2007C819C /* MAPStationList.m */,
 				6409C0061BD70804007C819C /* StationCell.h */,
 				6409C0071BD70804007C819C /* StationCell.m */,
+				6409C0131BD74056007C819C /* MAPWebViewController.h */,
+				6409C0141BD74056007C819C /* MAPWebViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -237,6 +250,7 @@
 		A1179502A82C60D88D607F2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6409C0191BD7456C007C819C /* CoreLocation.framework */,
 				531B1B619B74F696818B3289 /* libPods-nyc-bike-finder.a */,
 			);
 			name = Frameworks;
@@ -410,12 +424,14 @@
 			files = (
 				6409C00F1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m in Sources */,
 				6409C0021BD706E2007C819C /* MAPStationList.m in Sources */,
+				6409C0181BD74523007C819C /* MAPMathUtils.m in Sources */,
 				6409BFBC1BD6FA90007C819C /* AppDelegate.m in Sources */,
 				6409C0081BD70804007C819C /* StationCell.m in Sources */,
 				6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */,
 				6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */,
 				6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */,
 				6409BFB91BD6FA90007C819C /* main.m in Sources */,
+				6409C0151BD74056007C819C /* MAPWebViewController.m in Sources */,
 				6409BFC51BD6FA90007C819C /* nyc_bike_finder.xcdatamodeld in Sources */,
 				6409C00B1BD70820007C819C /* Station.m in Sources */,
 			);

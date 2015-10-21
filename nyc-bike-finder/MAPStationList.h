@@ -8,11 +8,11 @@
 
 #import "MAPBase.h"
 
-@class MAPWebView;
+@class MAPWebViewController;
 
 @interface MAPStationList : MAPBase
 
-@property (nonatomic, strong) MAPWebView* webView;
+@property (nonatomic, strong) MAPWebViewController* webView;
 
 
 @end
