@@ -13,15 +13,15 @@
 
 +(Station*)fromJSON:(NSDictionary*)dictionary {
     Station* station = [[Station alloc] init];
-    station.stationID = [[dictionary safeObjectForKey:@"id"] integerValue];
+    station.stationID = (int)[[dictionary safeObjectForKey:@"id"] integerValue];
     station.stationName = [dictionary safeObjectForKey:@"stationName"];
-    station.availableDocks = [[dictionary safeObjectForKey:@"availableDocks"] integerValue];
-    station.totalDocks = [[dictionary safeObjectForKey:@"totalDocks"] integerValue];
+    station.availableDocks = (int)[[dictionary safeObjectForKey:@"availableDocks"] integerValue];
+    station.totalDocks = (int)[[dictionary safeObjectForKey:@"totalDocks"] integerValue];
     station.latitude = [[dictionary safeObjectForKey:@"latitude"] floatValue];
     station.longitude = [[dictionary safeObjectForKey:@"longitude"] floatValue];
     station.statusValue = [dictionary safeObjectForKey:@"statusValue"];
-    station.statusKey = [[dictionary safeObjectForKey:@"statusKey"] integerValue];
-    station.availableBikes = [[dictionary safeObjectForKey:@"availableBikes"] integerValue];
+    station.statusKey = (int)[[dictionary safeObjectForKey:@"statusKey"] integerValue];
+    station.availableBikes = (int)[[dictionary safeObjectForKey:@"availableBikes"] integerValue];
     station.statusValue = [dictionary safeObjectForKey:@"statusValue"];
     station.stAddress1 = [dictionary safeObjectForKey:@"stAddress1"];
     station.stAddress2 = [dictionary safeObjectForKey:@"stAddress2"];
@@ -32,12 +32,23 @@
     station.lastCommunicationTime = [dictionary safeObjectForKey:@"lastCommunicationTime"];
     station.landMark = [dictionary safeObjectForKey:@"landMark"];
 
+    station.googleMapsUrl = [station getGoogleMapsURL];
+    
     return station;
 }
 
 - (NSString *)description {
     return [NSString stringWithFormat:
-            @"Station: %i %@", self.stationID, self.stationName];
+            @"Station: %i %@ %@",
+                self.stationID,
+                self.stationName, self.googleMapsUrl];
 }
+
+-(NSString*)getGoogleMapsURL {
+    NSString*latlong = [NSString stringWithFormat:@"%f,%f",
+                        self.latitude, self.longitude];
+    return [NSString stringWithFormat:kGoogleMapsURL,latlong];
+}
+
 
 @end

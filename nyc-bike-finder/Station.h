@@ -28,11 +28,13 @@
 @property (nonatomic, strong) NSString* altitude;
 @property (nonatomic, strong) NSDate* lastCommunicationTime;
 @property (nonatomic, strong) NSString* landMark;
+@property (nonatomic, strong) NSString* googleMapsUrl;
 
 
 //testStation: false,
 
 
 +(Station*)fromJSON:(NSDictionary*)dictionary;
+-(NSString*)getGoogleMapsURL;
 
 @end

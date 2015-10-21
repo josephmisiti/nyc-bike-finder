@@ -6,16 +6,19 @@
 //  Copyright © 2015 Math And Pencil LLC. All rights reserved.
 //
 
-#import "MAPStationList.h"
-#import "MAPHTTPClient.h"
+
 #import "Station.h"
 #import "StationCell.h"
+#import "MAPStationList.h"
+#import "MAPHTTPClient.h"
 
 @interface MAPStationList ()
 
 @end
 
 @implementation MAPStationList
+
+@synthesize webView = _webView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,5 +85,32 @@
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return kCellHeight;
 }
+
+#pragma mark - SAMWebView
+
+//- (void)webViewDidFinishLoadingPage:(SAMWebView *)aWebView{
+//    //    // http://codegerms.com/login-with-twitter-example-with-ios-tutorial-using-oauth/
+//    //    NSString *theAbsoluteURL = [NSString stringWithFormat:@"%@",aWebView.request.URL.absoluteString];
+//    //    NSRange textRange = [[theAbsoluteURL lowercaseString] rangeOfString:[@"api/authenicated" lowercaseString]];
+//    //    if(textRange.location != NSNotFound){
+//    //        //[self.navigationController dismissModalViewControllerAnimated:YES];
+//    //        [self dismissViewControllerAnimated:NO completion:nil];
+//    //        loginSuccess = YES;
+//    //    }
+//}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Station* station = [self.tableData objectAtIndex:indexPath.row];
+    //self.webView.webView loadURLString:kFacebookConnectURL];
+    //_webView.webView.delegate = (id)self;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_webView];
+    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+}
+
+
+
 
 @end
