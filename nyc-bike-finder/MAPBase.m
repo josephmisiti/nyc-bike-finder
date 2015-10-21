@@ -27,6 +27,10 @@
     // override in base class
 }
 
+-(void)applyStyleSheets {
+    // override in base class
+}
+
 -(void)reloadDataWithAnimation {
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationFade];

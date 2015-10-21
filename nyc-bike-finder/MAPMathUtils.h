@@ -16,4 +16,9 @@
             latY:(CLLocationDegrees)latY
             longY:(CLLocationDegrees)longY;
 
+
+-(NSArray*)sortByKey:(NSMutableArray*)a
+        key:(NSString*)key
+        ascending:(BOOL)ascending;
+
 @end

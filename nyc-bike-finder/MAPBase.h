@@ -15,5 +15,6 @@
 
 -(void)refresh:(id)sender;
 -(void)reloadDataWithAnimation;
+-(void)applyStyleSheets;
 
 @end

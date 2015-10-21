@@ -27,6 +27,7 @@
 		6409C0151BD74056007C819C /* MAPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0141BD74056007C819C /* MAPWebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6409C0181BD74523007C819C /* MAPMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0171BD74523007C819C /* MAPMathUtils.m */; settings = {ASSET_TAGS = (); }; };
 		6409C01A1BD7456C007C819C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6409C0191BD7456C007C819C /* CoreLocation.framework */; };
+		6409C01F1BD74D23007C819C /* MAPSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C01E1BD74D23007C819C /* MAPSettings.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		6409C0161BD74523007C819C /* MAPMathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPMathUtils.h; sourceTree = "<group>"; };
 		6409C0171BD74523007C819C /* MAPMathUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPMathUtils.m; sourceTree = "<group>"; };
 		6409C0191BD7456C007C819C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6409C01D1BD74D23007C819C /* MAPSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPSettings.h; sourceTree = "<group>"; };
+		6409C01E1BD74D23007C819C /* MAPSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPSettings.m; sourceTree = "<group>"; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,14 +229,8 @@
 		6409BFFC1BD706B1007C819C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6409BFEE1BD6FB16007C819C /* MAPBase.h */,
-				6409BFEF1BD6FB16007C819C /* MAPBase.m */,
-				6409C0001BD706E2007C819C /* MAPStationList.h */,
-				6409C0011BD706E2007C819C /* MAPStationList.m */,
-				6409C0061BD70804007C819C /* StationCell.h */,
-				6409C0071BD70804007C819C /* StationCell.m */,
-				6409C0131BD74056007C819C /* MAPWebViewController.h */,
-				6409C0141BD74056007C819C /* MAPWebViewController.m */,
+				6409C01B1BD74D03007C819C /* Controllers */,
+				6409C01C1BD74D0C007C819C /* Cells */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -245,6 +242,30 @@
 				6409C00A1BD70820007C819C /* Station.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		6409C01B1BD74D03007C819C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6409BFEE1BD6FB16007C819C /* MAPBase.h */,
+				6409BFEF1BD6FB16007C819C /* MAPBase.m */,
+				6409C0001BD706E2007C819C /* MAPStationList.h */,
+				6409C0011BD706E2007C819C /* MAPStationList.m */,
+				6409C0131BD74056007C819C /* MAPWebViewController.h */,
+				6409C0141BD74056007C819C /* MAPWebViewController.m */,
+				6409C01D1BD74D23007C819C /* MAPSettings.h */,
+				6409C01E1BD74D23007C819C /* MAPSettings.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6409C01C1BD74D0C007C819C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6409C0061BD70804007C819C /* StationCell.h */,
+				6409C0071BD70804007C819C /* StationCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		A1179502A82C60D88D607F2A /* Frameworks */ = {
@@ -431,6 +452,7 @@
 				6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */,
 				6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */,
 				6409BFB91BD6FA90007C819C /* main.m in Sources */,
+				6409C01F1BD74D23007C819C /* MAPSettings.m in Sources */,
 				6409C0151BD74056007C819C /* MAPWebViewController.m in Sources */,
 				6409BFC51BD6FA90007C819C /* nyc_bike_finder.xcdatamodeld in Sources */,
 				6409C00B1BD70820007C819C /* Station.m in Sources */,

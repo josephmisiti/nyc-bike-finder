@@ -94,8 +94,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return kCellHeight;
 }
 
-#pragma mark - SAMWebView
-
+// #pragma mark - SAMWebView
+//
 //- (void)webViewDidFinishLoadingPage:(SAMWebView *)aWebView{
 //    //    // http://codegerms.com/login-with-twitter-example-with-ios-tutorial-using-oauth/
 //    //    NSString *theAbsoluteURL = [NSString stringWithFormat:@"%@",aWebView.request.URL.absoluteString];
@@ -118,6 +118,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
+-(void)applyStyleSheets {
+    // override in base class
+}
 
 
 

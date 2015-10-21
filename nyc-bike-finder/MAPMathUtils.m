@@ -22,6 +22,13 @@
 }
 
 
+-(NSArray*)sortByKey:(NSMutableArray*)a key:(NSString*)key ascending:(BOOL)ascending {
+
+    NSSortDescriptor * sortDescriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
+    NSArray * descriptors = [NSArray arrayWithObject:sortDescriptor];
+    return [a sortedArrayUsingDescriptors:descriptors];
+
+}
 
 
 @end
