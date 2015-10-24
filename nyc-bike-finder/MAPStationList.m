@@ -61,6 +61,10 @@
 #pragma mark - inheritence
 
 -(void)refresh:(id)sender {
+    if (self.loading) {
+        return;
+    }
+    self.loading = YES;
     MAPHTTPClient* client = [MAPHTTPClient sharedClient];
     [client uploadStations:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *dictionary = (NSDictionary *)responseObject;
@@ -68,10 +72,14 @@
             Station *station = [Station fromJSON:stationDictionary];
             [self.tableData addObject:station];
             NSLog(@"%@", station);
+            self.loading = NO;
+            [self setLoading:NO animated:YES];
         }
         [self reloadDataWithAnimation];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error=%@", error);
+        self.loading = NO;
+        [self setLoading:NO animated:YES];
     }];
 }
 

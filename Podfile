@@ -10,7 +10,7 @@ target 'nyc-bike-finder' do
 pod 'AFNetworking', '~> 2.4'
 pod 'SSToolkit'
 pod 'SSDataKit'
-pod 'SVPullToRefresh'
+pod 'SSPullToRefresh'
 pod 'MRProgress'
 pod 'SWTableViewCell'
 pod 'Mixpanel'
