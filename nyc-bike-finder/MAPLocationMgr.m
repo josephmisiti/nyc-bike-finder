@@ -23,15 +23,23 @@
 -(void)initialize {
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager startUpdatingLocation];
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
     [self.locationManager requestAlwaysAuthorization];
 }
 
 -(void)updateCurrentLocation {
-    float Lat = self.locationManager.location.coordinate.latitude;
-    float Long = self.locationManager.location.coordinate.longitude;
-    NSLog(@"Lat : %f  Long : %f",Lat,Long);
+    float latitude = self.locationManager.location.coordinate.latitude;
+    float longitude = self.locationManager.location.coordinate.longitude;
+    [self saveCurrentLocation:latitude longitude:longitude];
+}
+
+-(void)saveCurrentLocation:(float)latitude longitude:(float)longitude {
+    NSLog(@"--- saveCurrentLocation: latitude : %f  longitude : %f", latitude, longitude);
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
+    [userDefaults setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
 }
 
 @end

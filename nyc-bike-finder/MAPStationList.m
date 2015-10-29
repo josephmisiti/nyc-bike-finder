@@ -19,7 +19,7 @@
 @end
 
 @implementation MAPStationList {
-    MAPLocationMgr* locationMgr;
+    MAPLocationMgr* _locationMgr;
 }
 
 @synthesize webView = _webView;
@@ -28,9 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    locationMgr = [[MAPLocationMgr alloc] init];
-    [locationMgr initialize];
-    
+    _locationMgr = [[MAPLocationMgr alloc] init];
+    [_locationMgr initialize];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +39,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self refresh:nil];
+    [_locationMgr updateCurrentLocation];
 }
 
 -(MAPWebViewController*)webView{
@@ -71,9 +71,7 @@
     if (self.loading) {
         return;
     }
-    
-    [locationMgr updateCurrentLocation];
-    
+
     self.loading = YES;
     MAPHTTPClient* client = [MAPHTTPClient sharedClient];
     [client uploadStations:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {

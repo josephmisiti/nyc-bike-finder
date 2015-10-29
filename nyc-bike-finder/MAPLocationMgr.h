@@ -15,4 +15,7 @@
 -(void)initialize;
 -(void)updateCurrentLocation;
 
+-(void)saveCurrentLocation:(float)latitude longitude:(float)longitude;
+
+
 @end
