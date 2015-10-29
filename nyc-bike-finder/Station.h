@@ -29,9 +29,8 @@
 @property (nonatomic, strong) NSDate* lastCommunicationTime;
 @property (nonatomic, strong) NSString* landMark;
 @property (nonatomic, strong) NSString* googleMapsUrl;
+@property (nonatomic) float distanceFromCurrentLocation;
 
-
-//testStation: false,
 
 
 +(Station*)fromJSON:(NSDictionary*)dictionary;

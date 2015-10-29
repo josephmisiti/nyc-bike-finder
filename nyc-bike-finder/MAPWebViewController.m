@@ -7,15 +7,22 @@
 //
 
 #import "MAPWebViewController.h"
+#import "Station.h"
 
 @implementation MAPWebViewController
 
 @synthesize topCoverView = _topCoverView;
 @synthesize bottomCoverView = _bottomCoverView;
 @synthesize finishedButton = _finishedButton;
+@synthesize mapView = _mapView;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [self.view addSubview: self.mapView];
+    //[self.view addSubview:self.topCoverView];
+    //[self.bottomCoverView addSubview:self.finishedButton];
+    [self.view addSubview:self.finishedButton];
     
     self.navigationController.navigationBar.hidden = YES;
 }
@@ -23,15 +30,16 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.toolbarHidden = YES;
-
-    
-    [self.view addSubview:self.topCoverView];
-    [self.bottomCoverView addSubview:self.finishedButton];
-    [self.view addSubview:self.finishedButton];
-    
 }
 
 #pragma mark - lazy evaluation
+
+-(MKMapView*)mapView {
+    if(!_mapView){
+        _mapView = [[MKMapView alloc] initWithFrame:self.view.frame];
+    }
+    return _mapView;
+}
 
 -(UIButton*)finishedButton{
     if(!_finishedButton){
@@ -72,6 +80,31 @@
 -(void)onClickHideWebView:(id)sender{
     NSLog(@"--- onClickHideWebView");
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)applyMapZoomWithPins:(NSMutableArray*)stations {
+    NSLog(@"---- applyMapZoomWithPins");
+    // based on http://stackoverflow.com/a/22492566/323578
+    
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(40.720356, -73.984863);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.01f, 0.01f);
+    MKCoordinateRegion region = {coord, span};
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setCoordinate:coord];
+    
+    [self.mapView setRegion:region];
+    [self.mapView addAnnotation:annotation];
+    
+    for (Station*station in stations) {
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(station.latitude, station.longitude);
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        [annotation setCoordinate:coord];
+        [self.mapView addAnnotation:annotation];
+    }
+    
+    
+    
 }
 
 @end

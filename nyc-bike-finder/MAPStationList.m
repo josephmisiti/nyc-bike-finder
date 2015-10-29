@@ -128,6 +128,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Station* station = [self.tableData objectAtIndex:indexPath.row];
     [self.webView.webView loadURLString:station.googleMapsUrl];
     self.webView.webView.delegate = (id)self;
+    [self.webView applyMapZoomWithPins:self.tableData];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_webView];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;

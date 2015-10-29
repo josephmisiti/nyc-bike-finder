@@ -31,6 +31,7 @@
 		6409C0221BD80B59007C819C /* MAPPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0211BD80B59007C819C /* MAPPullToRefreshView.m */; };
 		6409C0251BD80B77007C819C /* MAPPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0241BD80B77007C819C /* MAPPullToRefreshContentView.m */; };
 		64AFF4831BE1BE2500AE72DF /* MAPLocationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */; };
+		64AFF4851BE2A35F00AE72DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AFF4841BE2A35F00AE72DF /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		6409C0241BD80B77007C819C /* MAPPullToRefreshContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPPullToRefreshContentView.m; sourceTree = "<group>"; };
 		64AFF4811BE1BE2500AE72DF /* MAPLocationMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPLocationMgr.h; sourceTree = "<group>"; };
 		64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPLocationMgr.m; sourceTree = "<group>"; };
+		64AFF4841BE2A35F00AE72DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64AFF4851BE2A35F00AE72DF /* MapKit.framework in Frameworks */,
 				6409C01A1BD7456C007C819C /* CoreLocation.framework in Frameworks */,
 				4C681E5064963D21EFCC8947 /* libPods-nyc-bike-finder.a in Frameworks */,
 			);
@@ -294,6 +297,7 @@
 		A1179502A82C60D88D607F2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64AFF4841BE2A35F00AE72DF /* MapKit.framework */,
 				6409C0191BD7456C007C819C /* CoreLocation.framework */,
 				531B1B619B74F696818B3289 /* libPods-nyc-bike-finder.a */,
 			);

@@ -34,6 +34,8 @@
 
     station.googleMapsUrl = [station getGoogleMapsURL];
     
+    // station.distanceFromCurrentLocation == ??
+    
     return station;
 }
 
