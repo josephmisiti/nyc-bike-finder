@@ -16,20 +16,21 @@
 		6409BFCA1BD6FA90007C819C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6409BFC81BD6FA90007C819C /* LaunchScreen.storyboard */; };
 		6409BFD51BD6FA90007C819C /* nyc_bike_finderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFD41BD6FA90007C819C /* nyc_bike_finderTests.m */; };
 		6409BFE01BD6FA90007C819C /* nyc_bike_finderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFDF1BD6FA90007C819C /* nyc_bike_finderUITests.m */; };
-		6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFEF1BD6FB16007C819C /* MAPBase.m */; settings = {ASSET_TAGS = (); }; };
-		6409BFF21BD7027A007C819C /* nyc.png in Resources */ = {isa = PBXBuildFile; fileRef = 6409BFF11BD7027A007C819C /* nyc.png */; settings = {ASSET_TAGS = (); }; };
-		6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF51BD703E9007C819C /* MAPConstants.m */; settings = {ASSET_TAGS = (); }; };
-		6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF91BD704D2007C819C /* MAPHTTPClient.m */; settings = {ASSET_TAGS = (); }; };
-		6409C0021BD706E2007C819C /* MAPStationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0011BD706E2007C819C /* MAPStationList.m */; settings = {ASSET_TAGS = (); }; };
-		6409C0081BD70804007C819C /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0071BD70804007C819C /* StationCell.m */; settings = {ASSET_TAGS = (); }; };
-		6409C00B1BD70820007C819C /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00A1BD70820007C819C /* Station.m */; settings = {ASSET_TAGS = (); }; };
-		6409C00F1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00E1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m */; settings = {ASSET_TAGS = (); }; };
-		6409C0151BD74056007C819C /* MAPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0141BD74056007C819C /* MAPWebViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6409C0181BD74523007C819C /* MAPMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0171BD74523007C819C /* MAPMathUtils.m */; settings = {ASSET_TAGS = (); }; };
+		6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFEF1BD6FB16007C819C /* MAPBase.m */; };
+		6409BFF21BD7027A007C819C /* nyc.png in Resources */ = {isa = PBXBuildFile; fileRef = 6409BFF11BD7027A007C819C /* nyc.png */; };
+		6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF51BD703E9007C819C /* MAPConstants.m */; };
+		6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409BFF91BD704D2007C819C /* MAPHTTPClient.m */; };
+		6409C0021BD706E2007C819C /* MAPStationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0011BD706E2007C819C /* MAPStationList.m */; };
+		6409C0081BD70804007C819C /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0071BD70804007C819C /* StationCell.m */; };
+		6409C00B1BD70820007C819C /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00A1BD70820007C819C /* Station.m */; };
+		6409C00F1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C00E1BD70B93007C819C /* NSDictionary+nyc_bike_finder.m */; };
+		6409C0151BD74056007C819C /* MAPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0141BD74056007C819C /* MAPWebViewController.m */; };
+		6409C0181BD74523007C819C /* MAPMathUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0171BD74523007C819C /* MAPMathUtils.m */; };
 		6409C01A1BD7456C007C819C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6409C0191BD7456C007C819C /* CoreLocation.framework */; };
-		6409C01F1BD74D23007C819C /* MAPSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C01E1BD74D23007C819C /* MAPSettings.m */; settings = {ASSET_TAGS = (); }; };
-		6409C0221BD80B59007C819C /* MAPPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0211BD80B59007C819C /* MAPPullToRefreshView.m */; settings = {ASSET_TAGS = (); }; };
-		6409C0251BD80B77007C819C /* MAPPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0241BD80B77007C819C /* MAPPullToRefreshContentView.m */; settings = {ASSET_TAGS = (); }; };
+		6409C01F1BD74D23007C819C /* MAPSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C01E1BD74D23007C819C /* MAPSettings.m */; };
+		6409C0221BD80B59007C819C /* MAPPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0211BD80B59007C819C /* MAPPullToRefreshView.m */; };
+		6409C0251BD80B77007C819C /* MAPPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0241BD80B77007C819C /* MAPPullToRefreshContentView.m */; };
+		64AFF4831BE1BE2500AE72DF /* MAPLocationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		6409C0211BD80B59007C819C /* MAPPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPPullToRefreshView.m; sourceTree = "<group>"; };
 		6409C0231BD80B77007C819C /* MAPPullToRefreshContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPPullToRefreshContentView.h; sourceTree = "<group>"; };
 		6409C0241BD80B77007C819C /* MAPPullToRefreshContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPPullToRefreshContentView.m; sourceTree = "<group>"; };
+		64AFF4811BE1BE2500AE72DF /* MAPLocationMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPLocationMgr.h; sourceTree = "<group>"; };
+		64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPLocationMgr.m; sourceTree = "<group>"; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +231,8 @@
 				6409BFF91BD704D2007C819C /* MAPHTTPClient.m */,
 				6409C0161BD74523007C819C /* MAPMathUtils.h */,
 				6409C0171BD74523007C819C /* MAPMathUtils.m */,
+				64AFF4811BE1BE2500AE72DF /* MAPLocationMgr.h */,
+				64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				6409BFBC1BD6FA90007C819C /* AppDelegate.m in Sources */,
 				6409C0081BD70804007C819C /* StationCell.m in Sources */,
 				6409BFFA1BD704D2007C819C /* MAPHTTPClient.m in Sources */,
+				64AFF4831BE1BE2500AE72DF /* MAPLocationMgr.m in Sources */,
 				6409BFF01BD6FB16007C819C /* MAPBase.m in Sources */,
 				6409BFF61BD703E9007C819C /* MAPConstants.m in Sources */,
 				6409BFB91BD6FA90007C819C /* main.m in Sources */,

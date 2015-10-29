@@ -12,18 +12,25 @@
 #import "MAPStationList.h"
 #import "MAPHTTPClient.h"
 #import "MAPWebViewController.h"
+#import "MAPLocationMgr.h"
 
 @interface MAPStationList ()
 
 @end
 
-@implementation MAPStationList
+@implementation MAPStationList {
+    MAPLocationMgr* locationMgr;
+}
 
 @synthesize webView = _webView;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    locationMgr = [[MAPLocationMgr alloc] init];
+    [locationMgr initialize];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,6 +71,9 @@
     if (self.loading) {
         return;
     }
+    
+    [locationMgr updateCurrentLocation];
+    
     self.loading = YES;
     MAPHTTPClient* client = [MAPHTTPClient sharedClient];
     [client uploadStations:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -71,7 +81,7 @@
         for (NSDictionary *stationDictionary in [dictionary objectForKey:@"stationBeanList"]) {
             Station *station = [Station fromJSON:stationDictionary];
             [self.tableData addObject:station];
-            NSLog(@"%@", station);
+            //NSLog(@"%@", station);
             self.loading = NO;
             [self setLoading:NO animated:YES];
         }
