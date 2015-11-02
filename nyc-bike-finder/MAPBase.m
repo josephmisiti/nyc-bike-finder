@@ -26,8 +26,8 @@
     
     _pullToRefreshView = [[MAPPullToRefreshView alloc]
                           initWithScrollView:self.tableView delegate:(id)self];
-    _pullToRefreshView.backgroundColor = UIColorFromRGB(0x46baef);
-    _pullToRefreshView.layer.borderColor = UIColorFromRGB(0x46baef).CGColor;
+    _pullToRefreshView.backgroundColor = UIColorFromRGB(kColorPink);
+    _pullToRefreshView.layer.borderColor = UIColorFromRGB(kColorPink).CGColor;
     _pullToRefreshView.layer.borderWidth = 1.0f;
 }
 

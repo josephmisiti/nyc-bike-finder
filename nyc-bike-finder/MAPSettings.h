@@ -15,5 +15,6 @@
 @property (nonatomic, strong) UIButton* sortByScore;
 
 -(void)onUpdateSettings:(id)sender;
+-(void)onDismissSettings:(id)sender;
 
 @end

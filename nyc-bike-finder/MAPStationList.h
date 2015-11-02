@@ -8,10 +8,15 @@
 
 #import "MAPBase.h"
 
+@class MAPSettings;
 @class MAPWebViewController;
 
 @interface MAPStationList : MAPBase
 
 @property (nonatomic, strong) MAPWebViewController* webView;
+@property (nonatomic, strong) MAPSettings* settingsView;
+
+-(void)onClickSettings:(id)sender;
 
 @end
+

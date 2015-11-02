@@ -10,6 +10,8 @@
 
 extern NSString *const kCitiBikeStationURL;
 extern NSString *const kGoogleMapsURL;
-
 extern CGFloat const kCellHeight;
 
+// colors
+extern NSUInteger const kColorGrey;
+extern NSUInteger const kColorPink;

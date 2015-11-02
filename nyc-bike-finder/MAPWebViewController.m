@@ -15,14 +15,18 @@
 @synthesize bottomCoverView = _bottomCoverView;
 @synthesize finishedButton = _finishedButton;
 @synthesize mapView = _mapView;
+@synthesize latitude = _latitude;
+@synthesize longitude = _longitude;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
     [self.view addSubview: self.mapView];
-    //[self.view addSubview:self.topCoverView];
-    //[self.bottomCoverView addSubview:self.finishedButton];
+    [self.view addSubview:self.topCoverView];
     [self.view addSubview:self.finishedButton];
+    
+    // map view deleted
+    self.mapView.delegate = (id)self;
     
     self.navigationController.navigationBar.hidden = YES;
 }
@@ -37,17 +41,23 @@
 -(MKMapView*)mapView {
     if(!_mapView){
         _mapView = [[MKMapView alloc] initWithFrame:self.view.frame];
+        [_mapView setShowsUserLocation:YES];
     }
     return _mapView;
 }
 
 -(UIButton*)finishedButton{
     if(!_finishedButton){
-        CGFloat height = 200.0f;
+        CGFloat height = 100.0f;
         CGFloat yOffset = self.view.frame.size.height - height;
         _finishedButton = [[UIButton alloc] init];
         _finishedButton.frame = CGRectMake(0.0f,yOffset,self.view.frame.size.width, height);
-        _finishedButton.backgroundColor = [UIColor redColor];
+        _finishedButton.backgroundColor = [UIColor blackColor];
+        _finishedButton.alpha = 0.5f;
+        [_finishedButton setTitle:@"Finished?" forState:UIControlStateNormal];
+        _finishedButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:25.0f];
+        [_finishedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_finishedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [_finishedButton addTarget:self action:@selector(onClickHideWebView:)
             forControlEvents:UIControlEventTouchUpInside];
 
@@ -83,10 +93,8 @@
 }
 
 -(void)applyMapZoomWithPins:(NSMutableArray*)stations {
-    NSLog(@"---- applyMapZoomWithPins");
     // based on http://stackoverflow.com/a/22492566/323578
-    
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(40.720356, -73.984863);
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(self.latitude, self.longitude);
     MKCoordinateSpan span = MKCoordinateSpanMake(0.01f, 0.01f);
     MKCoordinateRegion region = {coord, span};
     
@@ -102,9 +110,22 @@
         [annotation setCoordinate:coord];
         [self.mapView addAnnotation:annotation];
     }
-    
-    
-    
 }
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView
+           viewForAnnotation:(id <MKAnnotation>)annotation {
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    
+    return annotationView;
+
+}
+
 
 @end

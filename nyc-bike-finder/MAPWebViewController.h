@@ -11,12 +11,14 @@
 
 #import "SAMWebViewController.h"
 
-@interface MAPWebViewController : SAMWebViewController
+@interface MAPWebViewController : SAMWebViewController <MKMapViewDelegate>
 
 @property (nonatomic, nonatomic) MKMapView* mapView;
 @property (nonatomic, nonatomic) UIView* topCoverView;
 @property (nonatomic, nonatomic) UIView* bottomCoverView;
 @property (nonatomic, nonatomic) UIButton* finishedButton;
+@property (nonatomic) float latitude;
+@property (nonatomic) float longitude;
 
 -(void)onClickHideWebView:(id)sender;
 -(void)applyMapZoomWithPins:(NSMutableArray*)stations;

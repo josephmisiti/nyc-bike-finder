@@ -11,6 +11,9 @@
 @interface MAPLocationMgr : NSObject
 
 @property (nonatomic, strong) CLLocationManager* locationManager;
+@property (nonatomic) float latitude;
+@property (nonatomic) float longitude;
+
 
 -(void)initialize;
 -(void)updateCurrentLocation;

@@ -31,9 +31,12 @@
 @property (nonatomic, strong) NSString* googleMapsUrl;
 @property (nonatomic) float distanceFromCurrentLocation;
 
+@property (nonatomic) float currentLatitude;
+@property (nonatomic) float currentLongitude;
+@property (nonatomic) float distanceFromLocation;
 
 
 +(Station*)fromJSON:(NSDictionary*)dictionary;
--(NSString*)getGoogleMapsURL;
+-(void)performDistanceCalcuations;
 
 @end

@@ -11,6 +11,8 @@
 @implementation MAPLocationMgr
 
 @synthesize locationManager = _locationManager;
+@synthesize latitude = _latitude;
+@synthesize longitude = _longitude;
 
 -(CLLocationManager*)locationManager{
     if(!_locationManager){
@@ -40,6 +42,9 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
     [userDefaults setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
+    self.latitude = latitude;
+    self.longitude = longitude;
+
 }
 
 @end

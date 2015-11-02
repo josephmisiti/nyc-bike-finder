@@ -11,10 +11,10 @@
 
 @interface MAPMathUtils : NSObject
 
--(CLLocationDistance)calcualateLLDistance:(CLLocationDegrees)latX
-            longX:(CLLocationDegrees)longX
-            latY:(CLLocationDegrees)latY
-            longY:(CLLocationDegrees)longY;
++(CLLocationDistance)calcualateLLDistance:(float)latX
+            longX:(float)longX
+            latY:(float)latY
+            longY:(float)longY;
 
 
 -(NSArray*)sortByKey:(NSMutableArray*)a

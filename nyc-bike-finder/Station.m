@@ -8,6 +8,8 @@
 
 #import "Station.h"
 #import "NSDictionary+nyc_bike_finder.h"
+#import "MAPMathUtils.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation Station
 
@@ -31,8 +33,6 @@
     station.altitude = [dictionary safeObjectForKey:@"altitude"];
     station.lastCommunicationTime = [dictionary safeObjectForKey:@"lastCommunicationTime"];
     station.landMark = [dictionary safeObjectForKey:@"landMark"];
-
-    station.googleMapsUrl = [station getGoogleMapsURL];
     
     // station.distanceFromCurrentLocation == ??
     
@@ -46,11 +46,12 @@
                 self.stationName, self.googleMapsUrl];
 }
 
--(NSString*)getGoogleMapsURL {
-    NSString*latlong = [NSString stringWithFormat:@"%f,%f",
-                        self.latitude, self.longitude];
-    return [NSString stringWithFormat:kGoogleMapsURL,latlong];
+-(void)performDistanceCalcuations {
+    CLLocationDistance distance = [MAPMathUtils calcualateLLDistance:self.currentLatitude
+                                longX:self.currentLongitude
+                                latY:self.latitude
+                                longY:self.longitude];
+    self.distanceFromLocation = distance;
 }
-
 
 @end

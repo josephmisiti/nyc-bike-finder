@@ -10,15 +10,21 @@
 
 @implementation MAPMathUtils
 
--(CLLocationDistance)calcualateLLDistance:(CLLocationDegrees)latX
-                longX:(CLLocationDegrees)longX
-                 latY:(CLLocationDegrees)latY
-                longY:(CLLocationDegrees)longY {
++(CLLocationDistance)calcualateLLDistance:(float)latX
+                longX:(float)longX
+                 latY:(float)latY
+                longY:(float)longY {
     
     
-    CLLocation *locX = [[CLLocation alloc] initWithLatitude:latX longitude:longX];
-    CLLocation *locY = [[CLLocation alloc] initWithLatitude:latY longitude:longY];
-    return [locX distanceFromLocation:locY];
+    CLLocation *locX = [[CLLocation alloc] initWithLatitude:(CLLocationDegrees)latX
+                                                  longitude:(CLLocationDegrees)longX];
+    CLLocation *locY = [[CLLocation alloc] initWithLatitude:(CLLocationDegrees)latY
+                                                  longitude:(CLLocationDegrees)longY];
+    
+    
+    CLLocationDistance distance = [locX distanceFromLocation:locY];
+    NSLog(@"-- calcualateLLDistance: distance %f", distance);
+    return distance;
 }
 
 

@@ -30,6 +30,7 @@
 		6409C01F1BD74D23007C819C /* MAPSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C01E1BD74D23007C819C /* MAPSettings.m */; };
 		6409C0221BD80B59007C819C /* MAPPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0211BD80B59007C819C /* MAPPullToRefreshView.m */; };
 		6409C0251BD80B77007C819C /* MAPPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6409C0241BD80B77007C819C /* MAPPullToRefreshContentView.m */; };
+		646087ED1BE7D4EC00774951 /* settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 646087EC1BE7D4EC00774951 /* settings-50.png */; };
 		64AFF4831BE1BE2500AE72DF /* MAPLocationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */; };
 		64AFF4851BE2A35F00AE72DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AFF4841BE2A35F00AE72DF /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		6409C0211BD80B59007C819C /* MAPPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPPullToRefreshView.m; sourceTree = "<group>"; };
 		6409C0231BD80B77007C819C /* MAPPullToRefreshContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPPullToRefreshContentView.h; sourceTree = "<group>"; };
 		6409C0241BD80B77007C819C /* MAPPullToRefreshContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPPullToRefreshContentView.m; sourceTree = "<group>"; };
+		646087EC1BE7D4EC00774951 /* settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-50.png"; sourceTree = "<group>"; };
 		64AFF4811BE1BE2500AE72DF /* MAPLocationMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPLocationMgr.h; sourceTree = "<group>"; };
 		64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPLocationMgr.m; sourceTree = "<group>"; };
 		64AFF4841BE2A35F00AE72DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -174,6 +176,7 @@
 		6409BFB71BD6FA90007C819C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				646087EC1BE7D4EC00774951 /* settings-50.png */,
 				6409BFF11BD7027A007C819C /* nyc.png */,
 				6409BFB81BD6FA90007C819C /* main.m */,
 			);
@@ -411,6 +414,7 @@
 			files = (
 				6409BFF21BD7027A007C819C /* nyc.png in Resources */,
 				6409BFCA1BD6FA90007C819C /* LaunchScreen.storyboard in Resources */,
+				646087ED1BE7D4EC00774951 /* settings-50.png in Resources */,
 				6409BFC71BD6FA90007C819C /* Assets.xcassets in Resources */,
 				6409BFC21BD6FA90007C819C /* Main.storyboard in Resources */,
 			);
