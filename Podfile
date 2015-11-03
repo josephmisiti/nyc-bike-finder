@@ -14,6 +14,7 @@ pod 'SSPullToRefresh'
 pod 'MRProgress'
 pod 'SWTableViewCell'
 pod 'Mixpanel'
+pod 'YapDatabase'
 
 end
 

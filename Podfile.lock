@@ -20,6 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
   - Mixpanel (2.9.0):
     - Mixpanel/Mixpanel (= 2.9.0)
   - Mixpanel/Mixpanel (2.9.0)
@@ -79,6 +87,10 @@ PODS:
     - SAMTextView
     - SAMWebView
   - SWTableViewCell (0.3.7)
+  - YapDatabase (2.7.3):
+    - YapDatabase/standard (= 2.7.3)
+  - YapDatabase/standard (2.7.3):
+    - CocoaLumberjack (~> 2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4)
@@ -88,9 +100,11 @@ DEPENDENCIES:
   - SSPullToRefresh
   - SSToolkit
   - SWTableViewCell
+  - YapDatabase
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Mixpanel: 42ae6168effc48481d957f7883dd8514a398738d
   MRProgress: f4cfe862082418e8f542f077772283f425d6c699
   SAMAddressBar: ca4278987cca36a65fd8d29fae3fc5f3fa732469
@@ -109,5 +123,6 @@ SPEC CHECKSUMS:
   SSPullToRefresh: 369e862c1d6528c7a354fc85cd4763d4e670e9af
   SSToolkit: 6aa7a0966ee45788d0ec3748be7d753a2fef9629
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
+  YapDatabase: 6d6a30e97face6c3158830823c27614afe83e1e0
 
 COCOAPODS: 0.38.2
