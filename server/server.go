@@ -15,7 +15,6 @@ const (
     CITI_BIKE_JSON = "https://www.citibikenyc.com/stations/json"
 )
 
-
 type Station struct {
     Id int64 `json:"id"`
     StationName string `json:"stationName"`
@@ -48,6 +47,15 @@ var (
     showVersion = flag.Bool("version", false, "print version string")
 )
 
+func getStations(body []byte) (*Stations, error) {
+    var s = new(Stations)
+    err := json.Unmarshal(body, &s)
+    if(err != nil){
+        fmt.Println("whoops:", err)
+    }
+    return s, err
+}
+
 func runCronJob() {
     fmt.Println("\n--- runCronJob\n")
     
@@ -60,29 +68,15 @@ func runCronJob() {
     if err != nil {
         panic(err.Error())
     }
+        
+    s, err := getStations([]byte(body))
+    fmt.Println("-----# ", s.StationBeanList[0])  
     
-    var s Stations
-    err = json.Unmarshal([]byte(body), &s)
-    if(err != nil){
-        fmt.Println("whoops:", err)
-    }
-    fmt.Println("-----> ", s.StationBeanList[0])    
+    fmt.Println("\n--- runCronJob complete\n")
+    
     os.Exit(0)
 }
 
-
-func test1() {
-    body := `{
-        "executionTime": "2015-11-09 11:59:58 AM",
-        "stationBeanList": [{"id": 1, "stationName": "x"}]
-    }`
-    var s Stations
-    err := json.Unmarshal([]byte(body), &s)
-    if(err != nil){
-        fmt.Println("ERROR 1:", err)
-    }
-    fmt.Println("-----> ", s.StationBeanList)    
-}
 
 func main() {
     flag.Parse()

@@ -10,3 +10,5 @@ cron:
 help:
 	bin/server -h
 	
+test:
+	go test
