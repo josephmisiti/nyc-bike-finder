@@ -5,7 +5,6 @@ import(
     "flag"
     "fmt"
     "net/http"
-    "io"
     "io/ioutil"
     "os"
     "runtime"
@@ -16,73 +15,38 @@ const (
     CITI_BIKE_JSON = "https://www.citibikenyc.com/stations/json"
 )
 
-type Stations struct {
-    stationBeanList []Station
-}
 
 type Station struct {
-    id uint64 `json:"id"`
-    // stationName: "W 52 St & 11 Ave",
-    // availableDocks: 33,
-    // totalDocks: 39,
-    // latitude: 40.76727216,
-    // longitude: -73.99392888,
-    // statusValue: "In Service",
-    // statusKey: 1,
-    // availableBikes: 4,
-    // stAddress1: "W 52 St & 11 Ave",
-    // stAddress2: "",
-    // city: "",
-    // postalCode: "",
-    // location: "",
-    // altitude: "",
-    // testStation: false,
-    // lastCommunicationTime: "2015-11-02 02:30:22 PM",
-    // landMark: ""
+    Id int64 `json:"id"`
+    StationName string `json:"stationName"`
+    AvailableDocks int64 `json:"availableDocks"`
+    TotalDocks int64 `json:"totalDocks"`
+    Latitude float64 `json:"latitude"`
+    Longitude float64 `json:"longitude"`
+    StatusValue string `json:"statusValue"`
+    StatusKey int64 `json:"statusKey"`
+    AvailableBikes int64 `json:"availableBikes"`
+    StAddress1 string `json:"stAddress1"`
+    StAddress2 string `json:"stAddress2"`
+    City string `json:"city"`
+    PostalCode string `json:"postalCode"`
+    Location string `json:"location"`
+    Altitude string `json:"altitude"`
+    TestStation bool `json:"testStation"`
+    LastCommunicationTime string `json:"lastCommunicationTime"`
+    LandMark string `json:"landMark"`
 }
 
+type Stations struct {
+    ExecutionTime string `json:"executionTime"`
+    StationBeanList []Station `json:"stationBeanList"`
+}
 
 var (
     port   = flag.String("port", ":8125", "UDP service address")
     runCron = flag.Bool("runCron", false, "run the cron job to pull the statistics")
     showVersion = flag.Bool("version", false, "print version string")
 )
-
-type Record struct {
-	Author Author `json:"author"`
-	Title  string `json:"title"`
-	URL    string `json:"url"`
-}
-
-type Author struct {
-	ID    uint64 `json:"id"`
-	Email string `json:"email"`
-}
-
-type author Author
-
-func (a *Author) UnmarshalJSON(b []byte) (err error) {
-	j, s, n := author{}, "", uint64(0)
-	if err = json.Unmarshal(b, &j); err == nil {
-		*a = Author(j)
-		return
-	}
-	if err = json.Unmarshal(b, &s); err == nil {
-		a.Email = s
-		return
-	}
-	if err = json.Unmarshal(b, &n); err == nil {
-		a.ID = n
-	}
-	return
-}
-
-func Decode(r io.Reader) (x *Record, err error) {
-	x = new(Record)
-	err = json.NewDecoder(r).Decode(x)
-	return
-}
-
 
 func runCronJob() {
     fmt.Println("\n--- runCronJob\n")
@@ -97,54 +61,28 @@ func runCronJob() {
         panic(err.Error())
     }
     
-    var data map[string]string
-    json.Unmarshal(body, &data)
-    fmt.Printf("Results: %v\n", data["stationBeanList"])     
+    var s Stations
+    err = json.Unmarshal([]byte(body), &s)
+    if(err != nil){
+        fmt.Println("whoops:", err)
+    }
+    fmt.Println("-----> ", s.StationBeanList[0])    
     os.Exit(0)
 }
 
-func test() {
-	var r []Record
-    body := `[{
-    	  "author": "attila@attilaolah.eu",
-    	  "title":  "My Blog",
-    	  "url":    "http://attilaolah.eu"
-    	}, {
-    	  "author": 1234567890,
-    	  "title":  "Westartup",
-    	  "url":    "http://www.westartup.eu"
-    	}, {
-    	  "author": {
-    	    "id":    1234567890,
-    	    "email": "nospam@westartup.eu"
-    	  },
-    	  "title":  "Westartup",
-    	  "url":    "http://www.westartup.eu"
-    	}]`
-    err := json.Unmarshal([]byte(body), &r)
-    if(err != nil){
-        fmt.Println("ERROR:", err) 
-    }
-	fmt.Println("RECORDS:", r) 
-}
 
 func test1() {
-	var s []Stations
     body := `{
-        "executionTime": "2015-11-02 02:30:30 PM",
-        "stationBeanList": [
-            {
-            "id": 72
-            }
-        ]
-        }`
+        "executionTime": "2015-11-09 11:59:58 AM",
+        "stationBeanList": [{"id": 1, "stationName": "x"}]
+    }`
+    var s Stations
     err := json.Unmarshal([]byte(body), &s)
     if(err != nil){
-        fmt.Println("ERROR:", err) 
+        fmt.Println("ERROR 1:", err)
     }
-	fmt.Println(s) 
+    fmt.Println("-----> ", s.StationBeanList)    
 }
-
 
 func main() {
     flag.Parse()
@@ -155,5 +93,6 @@ func main() {
     
      if(*runCron) {
          runCronJob()
+         //test1()
      }
 }

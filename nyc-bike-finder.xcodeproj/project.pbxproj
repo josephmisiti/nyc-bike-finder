@@ -33,6 +33,7 @@
 		646087ED1BE7D4EC00774951 /* settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 646087EC1BE7D4EC00774951 /* settings-50.png */; };
 		64AFF4831BE1BE2500AE72DF /* MAPLocationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */; };
 		64AFF4851BE2A35F00AE72DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AFF4841BE2A35F00AE72DF /* MapKit.framework */; };
+		64DAA9191BED48E300295BA1 /* DBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DAA9181BED48E300295BA1 /* DBUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		64AFF4811BE1BE2500AE72DF /* MAPLocationMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPLocationMgr.h; sourceTree = "<group>"; };
 		64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPLocationMgr.m; sourceTree = "<group>"; };
 		64AFF4841BE2A35F00AE72DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		64DAA9171BED48E300295BA1 /* DBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBUtils.h; sourceTree = "<group>"; };
+		64DAA9181BED48E300295BA1 /* DBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBUtils.m; sourceTree = "<group>"; };
 		E65D67D500E550262522AD4F /* Pods-nyc-bike-finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyc-bike-finder.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyc-bike-finder/Pods-nyc-bike-finder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +242,8 @@
 				6409C0171BD74523007C819C /* MAPMathUtils.m */,
 				64AFF4811BE1BE2500AE72DF /* MAPLocationMgr.h */,
 				64AFF4821BE1BE2500AE72DF /* MAPLocationMgr.m */,
+				64DAA9171BED48E300295BA1 /* DBUtils.h */,
+				64DAA9181BED48E300295BA1 /* DBUtils.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				6409C0151BD74056007C819C /* MAPWebViewController.m in Sources */,
 				6409BFC51BD6FA90007C819C /* nyc_bike_finder.xcdatamodeld in Sources */,
 				6409C00B1BD70820007C819C /* Station.m in Sources */,
+				64DAA9191BED48E300295BA1 /* DBUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
