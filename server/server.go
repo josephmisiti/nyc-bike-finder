@@ -81,7 +81,7 @@ func runCronJob() {
 func main() {
     flag.Parse()
     if(*showVersion) {
-        fmt.Printf("server v%s (built w/%s)\n", VERSION, runtime.Version())
+        fmt.Printf("server v%d (built w/%s)\n", VERSION, runtime.Version())
         return
     } 
     
