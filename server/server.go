@@ -70,9 +70,8 @@ func runCronJob() {
     }
         
     s, err := getStations([]byte(body))
-    fmt.Println("-----# ", s.StationBeanList[0])
-    // TODO: Write all station bean lists to postgres
-    
+    writeStationHistories(s.StationBeanList)
+
     fmt.Println("\n--- runCronJob complete\n")
     
     os.Exit(0)
