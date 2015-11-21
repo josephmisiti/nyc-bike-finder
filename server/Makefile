@@ -1,5 +1,5 @@
 build:
-	go build -o bin/server server.go 
+	go build -o bin/server server.go db_writer.go
 	
 clean:
 	rm server
