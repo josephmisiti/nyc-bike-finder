@@ -43,7 +43,6 @@
             failure((AFHTTPRequestOperation *)operation, error);
         }
     }];
-    
 }
 
 
