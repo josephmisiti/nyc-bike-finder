@@ -14,6 +14,7 @@
 #import "MAPWebViewController.h"
 #import "MAPLocationMgr.h"
 #import "MAPSettings.h"
+#import "DBUtils.h"
 
 @interface MAPStationList ()
 
@@ -21,6 +22,7 @@
 
 @implementation MAPStationList {
     MAPLocationMgr* _locationMgr;
+    DBUtils* dbClient;
 }
 
 @synthesize webView = _webView;
@@ -28,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    dbClient = [DBUtils sharedClient];
     
     [self applyStyleSheets];
     _locationMgr = [[MAPLocationMgr alloc] init];

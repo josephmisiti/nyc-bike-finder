@@ -7,17 +7,28 @@
 //
 
 #import "DBUtils.h"
+#import "YapDatabase.h"
+#import "YapDatabaseConnection.h"
 
 @implementation DBUtils
 
 //https://github.com/yapstudios/YapDatabase/issues/40
 
-@synthesize databasePath = _databasePath;
+@synthesize database = _database;
 
-- (NSString*)databasePath{
-    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentPath = [searchPaths lastObject];
-    return [documentPath stringByAppendingPathComponent:@"test_db"];
+- (id)init
+{
+    if(self = [super init]){
+        NSString *databaseFilePath = [[[[NSFileManager defaultManager]
+                URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] absoluteString];
+        self.database = [[YapDatabase alloc]
+                         initWithPath:[databaseFilePath stringByAppendingPathComponent:@"db.sqlite"]];
+        
+        self.connection = [self.database newConnection];
+        
+        NSLog(@"--- YapDatabase initialized");
+    }
+    return self;
 }
 
 + (DBUtils *)sharedClient{
@@ -27,6 +38,19 @@
         sharedClient = [[self alloc] init];
     });
     return sharedClient;
+}
+
+-(void)addObject:(NSString*)forKey
+        setObject:(NSString*)setObject
+    inCollection:(NSString*)inCollection {
+
+    [self.connection readWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
+        [transaction setObject:setObject forKey:forKey inCollection:inCollection];
+    }];
+    
+}
+
+-(void)getObject:(NSString*)forKey inCollection:(NSString*)inCollection{
 }
 
 @end

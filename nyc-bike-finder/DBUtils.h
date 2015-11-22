@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class YapDatabase;
+@class YapDatabaseConnection;
+
 @interface DBUtils : NSObject
 
-@property (nonatomic, strong) NSString* databasePath;
-
+@property (nonatomic, strong) YapDatabase* database;
+@property (nonatomic, strong) YapDatabaseConnection* connection;
 
 +(DBUtils *)sharedClient;
 
+-(void)addObject:(NSString*)forKey setObject:(NSString*)setObject inCollection:(NSString*)inCollection;
+-(void)getObject:(NSString*)forKey inCollection:(NSString*)inCollection;
 
 @end
